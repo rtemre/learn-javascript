@@ -24,3 +24,41 @@ const one = [1].reduce(function (a, n) {
 
 
 console.log(one);
+
+// TODO: Write a polyfill for reduce function
+
+let add = 0;
+
+for (let i = 0; i < arr.length; i++) {
+    add = add + arr[i]
+}
+
+console.log(add);
+
+Array.prototype.myReduce = function (callback, initialValue) {
+    if (typeof callback !== "function")
+        throw new Error("Callback is not function");
+
+    if (this === null)
+        throw new Error("Invalid Data");
+
+    if (!this.length && !initialValue)
+        throw new Error("Reduce of empty array with no initial value");
+
+    const initValue = initialValue ? initialValue : this[0]
+    const startIndex = initialValue ? 0 : 1
+
+    let accumulator = initValue
+
+    for (let i = startIndex; i < this.length; i++) {
+        const nextValue = this[i];
+        accumulator = callback(accumulator, nextValue, i, this)
+    }
+    return accumulator
+}
+
+let output = arr.myReduce((acc, next, index, array) => {
+    return acc + next
+}, 0)
+
+console.log(output);
