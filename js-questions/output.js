@@ -47,7 +47,15 @@ const obj = {
 console.log(obj.regular()); // 100
 console.log(obj.arrow()); // undefined
  
- 
+// Summary:
+// regular method uses this correctly because it's a regular function.
+// arrow method fails because arrow functions don’t bind their own this.
+// Arrow functions do not have their own this.
+// Instead, they inherit this from their lexical scope 
+// (i.e., the scope where the function was defined).
+
+
+
 
 
 
