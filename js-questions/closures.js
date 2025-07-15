@@ -1,11 +1,30 @@
+// setTimeout + Closures Interview Question 
+
+
 function x() {
-    for (var i = 0; i <= 5; i++) {
+    // console.log("using let");
+    for (let i = 0; i <= 5; i++) {
         setTimeout(() => {
-            console.log(i);
+            console.log("let", i);
 
         }, i * 5000)
     }
-    console.log("closure");
-    
+
 }
 x()
+
+
+function x1() {
+    // console.log("using var");
+    for (var i = 0; i <= 5; i++) {
+        function close(x) {
+            setTimeout(() => {
+                console.log("var", x);
+
+            }, x * 5000)
+        }
+        close(i)
+    }
+
+}
+x1()
