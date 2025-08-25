@@ -18,3 +18,23 @@ function even_odd_sum(num) {
 }
 
 console.log("🚀 ~ even_odd_sum(49901999):", even_odd_sum(49901999));
+
+// Optimize Solution
+function even_odd_sum_optimize(num) {
+  let evensum = 0,
+    oddsum = 0;
+
+  while (num > 0) {
+    const digit = num % 10;
+    if (digit % 2 === 0) {
+      evensum += digit;
+    } else {
+      oddsum += digit;
+    }
+    num = Math.floor(num / 10);
+  }
+
+  return [evensum, oddsum];
+}
+
+console.log(even_odd_sum_optimize(49901999)); // [4, 46]
