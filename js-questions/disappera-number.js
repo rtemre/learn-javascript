@@ -35,3 +35,5 @@ var findDisappearedNumbers = function (nums) {
 
 console.log(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1])); // [5,6]
 console.log(findDisappearedNumbers([1, 1])); // [2]
+console.log(findDisappearedNumbers([2, 2])); // [1]
+console.log(findDisappearedNumbers([1, 2, 3, 4, 5]));
