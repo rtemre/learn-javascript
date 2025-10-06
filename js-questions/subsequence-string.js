@@ -24,3 +24,21 @@ var isSubsequence = function (s, t) {
 };
 console.log(isSubsequence("abc", "ahbgdc")); // true
 console.log(isSubsequence("axc", "ahbgdc")); // false
+
+// ============================================================
+// Given two strings a and b, return the length of the longest uncommon subsequence between a and b.
+// If no such uncommon subsequence exists, return -1.
+// An uncommon subsequence between two strings is a string that is a subsequence of exactly one of them.
+
+// Example 1:
+// Input: a = "aba", b = "cdc"
+// Output: 3
+// Explanation: One longest uncommon subsequence is "aba" because "aba" is a subsequence of "aba" but not "cdc".
+// Note that "cdc" is also a longest uncommon subsequence.
+
+var findLUSlength = function (a, b) {
+  return a === b ? -1 : Math.max(a.length, b.length);
+};
+
+console.log(findLUSlength("aba", "cdc")); // 3
+console.log(findLUSlength("aaa", "aaa")); // -1
