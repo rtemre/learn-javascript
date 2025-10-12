@@ -6,3 +6,5 @@ var repeatedStringMatch = function (A, B) {
 };
 
 repeatedStringMatch("abcd", "cdabcdab");
+repeatedStringMatch("a", "aa");
+repeatedStringMatch("abc", "cabcabca");
